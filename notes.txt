@@ -1,0 +1,21 @@
+ERR: npm install fails because of esbuild in node_modules
+SOL: npm config set ignore-scripts true
+
+
+ERR: npm run dev doesn't work (eslint is not supported by El Capitan)
+SOL: 
+- installed pnpm with brew
+- in package.json added:
+    "dependencies": {
+        "esbuild-wasm": "latest",
+    }
+    "pnpm": {
+        "overrides": {
+            "esbuild": "npm:esbuild-wasm@latest"
+        }
+    }
+- pnpm i
+- pnpm run dev
+
+COLORS PALLETTE: Adobe Color Wheel
+Color harmony Rule: Compound

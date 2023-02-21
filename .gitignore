@@ -1,0 +1,8 @@
+# Logsnode_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+.DS_Store

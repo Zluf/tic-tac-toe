@@ -2,20 +2,139 @@
 
 .game {
   padding: 2vw;
-  border: 2px solid var(--darkColor3);
   border-radius: 5%;
+  display: flex;
+  flex-flow: column;
+  /* align-items: center; */
 }
+
+.score {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.score h2 {
+  width: 100%;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.score-box {
+  width: 45%;
+  border-radius: 5px;
+  background-color: white;
+  overflow: hidden;
+}
+.score-box--sub {
+  display: inline-block;
+  width: 50%;
+  padding: 5px;
+  background: linear-gradient(-45deg, white, grey);
+}
+/* .score-box--sub:first-child {
+  border-right: 1px solid black;
+} */
 
 .board {
   display: grid;
+  justify-items: center;
   grid-template-columns: repeat(3, 1fr);
-  background-color: #f5f5f5;
+  gap: 5px;
+  /* background-color: #f5f5f5; */
 }
 
 .square {
   text-align: center;
   width: 50px;
   height: 50px;
+  border-radius: 5px;
   background-color: #ccc;
   border: 1px solid #999;
+}
+
+.container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: white;
+}
+.line {
+  position: absolute;
+
+  width: 1%;
+  height: 5px;
+  background-color: black;
+}
+.line1 {
+  left: 2%;
+  bottom: 0;
+  transform: rotate(-45deg);
+  transform-origin: left bottom;
+  animation: drawLine 0.3s ease-in-out forwards;
+}
+.line2 {
+  right: 2%;
+  bottom: 0;
+  transform: rotate(45deg);
+  transform-origin: right bottom;
+  animation: drawLine 0.3s ease-in-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes drawLine {
+  to {
+    width: 140%;
+  }
+}
+
+.arcContain {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  margin: 20px;
+  background-color: white;
+}
+
+.arc {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid black;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.archide {
+  width: 50%;
+  height: 0%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  animation: height-appear 1.2s linear 1.2s forwards;
+}
+
+.archideLeft {
+  top: auto;
+  bottom: 0;
+  right: auto;
+  left: 0;
+  animation: height-appear 1.2s linear forwards;
+}
+
+.archideLeft .arc {
+  top: auto;
+  bottom: 0;
+  right: auto;
+  left: 0;
+}
+
+@keyframes height-appear {
+  to {
+    height: 100%;
+  }
 }

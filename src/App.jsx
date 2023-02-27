@@ -8,6 +8,7 @@ const App = () => {
   const [scoreX, setScoreX] = useState(0);
   const [scoreO, setScoreO] = useState(0);
 
+  // Reset Game
   const newGame = () => {
     setBoard(Array(9).fill(null));
     winner !== "tie" && setPlayer(winner);
@@ -15,26 +16,18 @@ const App = () => {
   };
 
   const setScore = (winr) => {
-    if (winr === "X") setScoreX((prevScore) => prevScore + 1);
-    if (winr === "O") setScoreO((prevScore) => prevScore + 1);
+    winr === "X" && setScoreX((prevScore) => prevScore + 1);
+    winr === "O" && setScoreO((prevScore) => prevScore + 1);
   };
 
-  const renderSquare = (index) => {
-    return (
-      <div className="square" onClick={() => handleClick(index)}>
-        {board[index]}
-      </div>
-    );
-  };
-
-  const handleClick = (index) => {
+  const clickHandler = (i) => {
     // Guard Clause:
     // a) there's a winner;
     // b) position(s) already filled
-    if (winner || board[index]) return;
+    if (winner || board[i]) return;
 
     let newBoard = [...board];
-    newBoard[index] = player;
+    newBoard[i] = player;
     setBoard(newBoard);
 
     const newPlayer = player === "X" ? "O" : "X";
@@ -58,6 +51,8 @@ const App = () => {
       [0, 4, 8],
       [2, 4, 6],
     ];
+
+    // Checking if each square of a winning sequence is marked by the same player
     for (let i = 0; i < winningSequences.length; i++) {
       const [a, b, c] = winningSequences[i];
       if (
@@ -69,52 +64,62 @@ const App = () => {
         return curBoard[a];
       }
     }
+
+    // if there's no winning sequence, the winner stays null
     return null;
   };
 
-  const status = () => {
-    if (winner && winner !== "tie") {
-      return `Winner: ${winner}`;
-    } else if (winner === "tie") {
-      return `Tie!`;
-    } else if (!winner) {
-      return `Next player: ${player}`;
-    }
-  };
+  // Status display: "Next Player" & "Winner"
+  let status = "";
+  if (winner && winner !== "tie") status = `Winner: ${winner}`;
+  if (winner === "tie") status = `Tie!`;
+  if (!winner) status = `Next player: ${player}`;
 
+  // Checking for Tie status
   useEffect(() => {
-    // console.log(board);
-    // console.log(winner);
     board.every((sq) => sq) && setWinner("tie");
-  }, [board, winner]);
+  }, [board]);
 
   return (
     <div className="game">
       <div className="score">
         <h2>Score</h2>
-        <div>{`X: ${scoreX}`}</div>
-        <div>{`O: ${scoreO}`}</div>
+        <div className="score-box">
+          <span className="score-box--sub score__player--x">X</span>
+          <span className="score-box--sub score__count--o">{`${scoreX}`}</span>
+        </div>
+        <div className="score-box">
+          <span className="score-box--sub score__player--x">O</span>
+          <span className="score-box--sub score__count--o">{`${scoreO}`}</span>
+        </div>
       </div>
-      <div className="status">
-        {status()}
-        {/* {winner ? `Winner: ${winner}` : `Next player: ${player}`} */}
-      </div>
+      <div className="status">{status}</div>
       <div className="board">
-        {renderSquare(0)}
-        {renderSquare(1)}
-        {renderSquare(2)}
-        {renderSquare(3)}
-        {renderSquare(4)}
-        {renderSquare(5)}
-        {renderSquare(6)}
-        {renderSquare(7)}
-        {renderSquare(8)}
+        {board.map((_, i) => {
+          return (
+            <div className="square" key={i} onClick={() => clickHandler(i)}>
+              {board[i]}
+            </div>
+          );
+        })}
       </div>
       {winner && (
         <button className="reset" onClick={newGame}>
           New Game
         </button>
       )}
+      <div className="container">
+        <div className="line line1"></div>
+        <div className="line line2"></div>
+      </div>
+      <div className="arcContain">
+        <div className="archide archideLeft">
+          <div className="arc"></div>
+        </div>
+        <div className="archide">
+          <div className="arc"></div>
+        </div>
+      </div>
     </div>
   );
 };

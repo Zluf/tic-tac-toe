@@ -1,0 +1,50 @@
+/* TO TRY: that first clock-like animation I found uncovering the cricle */
+
+.o {
+  width: 55%;
+  height: 55%;
+  position: relative;
+}
+
+.o__half--left,
+.o__half--right {
+  width: 52%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+.o__half--left {
+  bottom: 0;
+  left: 0;
+  animation: appear 0.3s linear 0.3s forwards;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+}
+.o__half--right {
+  top: 0;
+  right: 0;
+  animation: appear 0.3s linear forwards;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+.o__border--left,
+.o__border--right {
+  width: 200%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid var(--darkColor3);
+  position: absolute;
+}
+.o__border--left {
+  bottom: 0;
+  left: 0;
+}
+.o__border--right {
+  top: 0;
+  right: 0;
+}
+
+@keyframes appear {
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}

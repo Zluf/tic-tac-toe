@@ -9,10 +9,10 @@
 }
 
 body {
-  background-color: var(--darkColor2);
+  background: var(--darkColor2);
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 10vw;
 }

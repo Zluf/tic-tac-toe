@@ -1,7 +1,8 @@
 :root {
   --darkColor1: #4e27a8;
-  --darkColor2: #5f5675;
-  --darkColor3: #496cdb;
-  --lightColor1: #ded5c7;
-  --lightColor2: #a86827;
+  --darkColor2: #332f3b;
+  --darkColor3: #78420b;
+  --lightColor1: #eee5d6;
+  --lightColor2: #d89e64;
+  --shadow: 5px 5px 5px rgba(0, 0, 0, 0.557);
 }

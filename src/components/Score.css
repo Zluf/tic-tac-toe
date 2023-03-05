@@ -23,11 +23,7 @@
   display: inline-block;
   width: 50%;
   padding: 5px;
-  background: linear-gradient(
-    125deg,
-    var(--lightColor2) 10%,
-    rgb(255, 255, 255) 80%
-  );
+  background: linear-gradient(125deg, #b2aeb9 10%, rgb(255, 255, 255) 80%);
   text-align: center;
 }
 .score-box--sub:first-child {

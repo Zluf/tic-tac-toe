@@ -106,8 +106,8 @@ const App = () => {
 
   useEffect(() => {
     // Checking for Tie status
-    board.every((sq) => sq) && setWinner("tie");
-  }, [board]);
+    board.every((sq) => sq) && !winner && setWinner("tie");
+  }, [board, winner]);
 
   return (
     <div className="game">

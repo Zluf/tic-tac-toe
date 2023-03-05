@@ -2,6 +2,10 @@
 
 This repository contains a Tic-Tac-Toe game created using React, HTML, CSS and Vite build tool.
 
+## App preview
+
+[https://tic-tac-toe-by-slavk.netlify.app/](https://tic-tac-toe-by-slavk.netlify.app/)
+
 ## Usage
 
 You can use this repository to play Tic-Tac-Toe in the browser. To start you need to have **pnpm** package manager installed. Clone the repository and install the necessary dependencies using the command **pnpm install**. Then run the command **pnpm run dev** to launch the game in your browser.
@@ -28,7 +32,7 @@ The **newGame()** function resets the board and the winner, and sets the player 
 
 The colors were picked by a generated color harmony at [Adobe Color Wheel](https://color.adobe.com/create/color-wheel). Decisions on visual and stylistic appearance were made at various stages of development.
 
-![App Screenshot](./tic-tac-toe-screentshot.png)
+![App Screenshot](./tic-tac-toe-screenshot.png)
 
 ## Contribution
 

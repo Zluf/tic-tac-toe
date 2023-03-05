@@ -2,7 +2,7 @@
 
 This repository contains a Tic-Tac-Toe game created using React, HTML, CSS and Vite build tool.
 
-## App preview
+### App preview
 
 [https://tic-tac-toe-by-slavk.netlify.app/](https://tic-tac-toe-by-slavk.netlify.app/)
 
@@ -30,7 +30,7 @@ The **newGame()** function resets the board and the winner, and sets the player 
 
 ## Styling
 
-The colors were picked by a generated color harmony at [Adobe Color Wheel](https://color.adobe.com/create/color-wheel). Decisions on visual and stylistic appearance were made at various stages of development.
+The colors were picked by a generated color harmony at [Adobe Color Wheel](https://color.adobe.com/create/color-wheel). Approaches to animation of Xs and Os were researched, and then adjusted to fit stylistic goals. Personal decisions on visual and stylistic appearance were made at various stages of development.
 
 ![App Screenshot](./tic-tac-toe-screenshot.png)
 

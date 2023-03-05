@@ -3,7 +3,6 @@
   justify-items: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
-  /* background-color: grey; */
 }
 
 .square {
@@ -15,7 +14,6 @@
   align-items: center;
   border-radius: 5px;
   background-color: #e2e2e2;
-  box-shadow: 5px 5px 10px var(--lightColor2) inset;
 }
 .square__hover-state {
   width: 100%;
